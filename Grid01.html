@@ -1,0 +1,65 @@
+
+<html>
+<head>
+<style>
+.bolum1 { grid-area: header; } 
+.bolum2 { grid-area: menu; }  
+.bolum3 { grid-area: section; } 
+.bolum4 { grid-area: article; }  
+.bolum5 { grid-area: footer; }  
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'header header header header header header'
+    'section menu menu menu menu menu  '
+    'article footer footer footer footer footer';
+  grid-gap: 15px;
+  background-color: rgba(255, 112, 143);
+  color: blue;
+  padding: 10px;
+}
+
+.grid-container > div { 
+  background-color: rgba(255, 227, 186); 
+  text-align: center; 
+  padding: 20px 0;
+  font-size: 35px;
+}
+<script> 
+<!-- .bolum1 { grid-area: header; }   Grid alanında  üst bölümünü oluşturur. -->
+<!--.bolum2 { grid-area: menu; }  Grid alanında sidebar bölümünü oluşturur.  -->
+<!--.bolum3 { grid-area: section; }  Grid alanında bölüm olduşturur -->
+<!--.bolum4 { grid-area: article; }  Grid alanında  yazı bölümü oluşturur.-->
+<!--.bolum5 { grid-area: footer; }  Grid alanında  alt bölümünü oluşturur.-->
+<!--.grid-container { Row, column, cell gibi yapıların oluşumunu sağlayan ana kutudur.-->
+ <!-- display: grid; Taşıyıcı içindeki elemanları satır ve sütun şeklinde konumlandırır.-->
+<!-- grid-template-areas: Grid alanlarını konumlandırmak için kullanılır.-->
+<!--  'header header header header header header' Konumunu belirler.-->
+<!--  'section menu menu menu menu menu  ' Konumunu belirler.-->
+<!--  'article footer footer footer footer footer'; Konumunu belirler.-->
+<!--  grid-gap: 15px; Taşıyıcı altındaki elementlerin aralarında boşlukları oluşturur.-->
+<!-- background-color: rgba(255, 112, 143); Arka plan rengini belirler.-->
+<!--color: blue; Yazı rengini belirler.-->
+<!--padding: 10px; Genişliği ayarlar.-->
+<!--.grid-container > div { Row, column, cell gibi yapıların oluşumunu sağlayan ana kutudur.-->
+<!-- background-color: rgba(255, 227, 186);  Arka plan rengini belirler.-->
+<!-- text-align: center; Yazıyı ortalamaya yarar.-->
+<!--padding: 20px 0; Genişliği ayarlar.-->
+<!--font-size: 35px; Yazı rengini belirler.-->
+</script>
+
+</style>
+</head>
+<body>
+
+<div class="grid-container"> <!-- Bir bölüm belirtip birden fazla HTML etiketine aynı CSS özelliklerini vermek için sınıf oluşturduk. -->
+  <div class="bolum1">Tavsanlı MeslekYüksekOkulu </div> <!-- Bir bölüm belirtip aynı özellikleri vermek için Tavsanlı MeslekYüksekOkulu adında sınıf oluşturduk.-->
+  <div class="bolum2">Bölümler</div><!-- Bir bölüm belirtip aynı özellikleri vermek için Bölümler adında sınıf oluşturduk.-->
+  <div class="bolum3">Öğrenciler</div>  <!-- Bir bölüm belirtip aynı özellikleri vermek için Öğrenciler adında sınıf oluşturduk.-->
+  <div class="bolum4">Öğretim Görevlisi</div><!-- Bir bölüm belirtip aynı özellikleri vermek için Öğretim Görevlisi adında sınıf oluşturduk.-->
+  <div class="bolum5">İletişim</div><!-- Bir bölüm belirtip aynı özellikleri vermek için İletişim adında sınıf oluşturduk.-->
+</div>
+
+</body>
+</html>
