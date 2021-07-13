@@ -1,0 +1,67 @@
+<html>
+<head>
+<style>
+		.item1 { grid-area: header; } /*Grid alanında  üst bölümünü oluşturur.*/           
+		.item2 { grid-area: menu; }  /*Grid alanında sidebar bölümünü oluşturur.*/            
+		.item3 { grid-area: main; }   /*Grid alanında ana bölümü oluşturur.*/       
+		.item8 { grid-area: right; }  /*Grid alanında sağ bölümü oluşturur.*/                      
+		.item5 { grid-area: footer2; } /*Grid alanında  alt bölümünü oluşturur*/ 
+		.item6 { grid-area: footer3; } /*Grid alanında  alt bölümünü oluşturur*/     
+		.item7 { grid-area: footer4; } /*Grid alanında  alt bölümünü oluşturur*/    
+
+		.grid-container {
+		  display: grid;
+		  grid-template-areas: /*Grid alanlarını konumlandırmak için kullanılır. */                                
+			'header header header header header header'  	  
+			'footer1 footer2 footer3 footer3 footer4 footer4'
+			'menu main main main right right';
+		  grid-gap: 10px; /*Taşıyıcı altındaki elementlerin aralarında boşlukları oluşturur.*/
+		  background-color: pink; /* Arka plan rengini ayarlar*/
+		  padding: 10px; /*Genişliği ayarlar.*/
+		}
+
+		.grid-container > div {		 
+		  background-color: rgb(235, 135, 255);  /* Arka plan rengini ayarlar*/
+		  text-align: center; /*metin hizalama merkezi*/ 
+		  padding: 20px ; /*Genişliği ayarlar.*/
+		  font-size: 30px; /*Yazı boyutunu belirler.*/
+		}
+		
+		.grid-container > div {		 
+		  background-color:rgb(139, 108, 145);  /* Arka plan rengini ayarlar*/
+		  text-align: center; /*metin hizalama merkezi*/ 
+		  padding: 20px 0; /*Genişliği ayarlar.*/
+		  font-size: 30px; /*Yazı boyutunu belirler.*/
+		}
+		
+		@media screen and (max-width: 508px) {  /* genişliği 508 pikselin altında iken yapısının değişmesini sağlıyoruz.*/
+			body {
+				background-color: rgb(196, 239, 242); /* Arka plan rengini ayarlar*/
+			}
+			
+			.grid-container {	 /* genişliği 508 pikselin altında iken alt alta dizilmesini sağlıyoruz.*/
+			grid-template-areas:  /*Grid alanlarını konumlandırmak için kullanılır. */ 
+				'footer1 '
+				  'footer2 '
+				  'right  '
+				  'footer3  '
+				  'footer4 '
+				  'header'
+				  'main';
+				}
+			}
+</style>
+</head>
+<body>
+	<div class="grid-container">
+		<div class="item1">Kütahya Dumlupınar Üniversitesi</div> <!-- Bir bölüm belirtip aynı özellikleri vermek için Kütahya Dumlupınar Üniversitesi adında sınıf oluşturduk.-->
+		<div class="item2">TAVŞANLI MESLEK YÜKSEKOKULU</div> <!-- Bir bölüm belirtip aynı özellikleri vermek için TAVŞANLI MESLEK YÜKSEKOKULU adında sınıf oluşturduk.-->		
+		<div class="item3">BÖLÜMLER</div> <!-- Bir bölüm belirtip aynı özellikleri vermek için BÖLÜMLER adında sınıf oluşturduk.--> 
+		<div class="item4">ÖĞRETİM GÖREVLİSİ</div> <!-- Bir bölüm belirtip aynı özellikleri vermek için ÖĞRETİM GÖREVLİSİ adında sınıf oluşturduk.-->
+		<div class="item5">ÖĞRENCİ İŞLERİ</div> <!-- Bir bölüm belirtip aynı özellikleri vermek için ÖĞRENCİ İŞLERİ adında sınıf oluşturduk.-->
+		<div class="item6">ADRES</div> <!-- Bir bölüm belirtip aynı özellikleri vermek için ADRES adında sınıf oluşturduk.-->
+		<div class="item7">İLETİŞİM</div> <!-- Bir bölüm belirtip aynı özellikleri vermek için İLETİŞİM adında sınıf oluşturduk.-->
+		<div class="item8">AKADEMİK TAKVİM</div> <!-- Bir bölüm belirtip aynı özellikleri vermek için AKADEMİK TAKVİM adında sınıf oluşturduk.-->	
+	</div>
+</body>
+</html> 
