@@ -1,0 +1,129 @@
+<html>
+<head>
+<style>
+		.item1 { grid-area: header; }  /*Grid alanında  üst bölümünü oluşturur.*/            
+		.item2 { grid-area: menu; }    /*Grid alanında sidebar bölümünü oluşturur.*/            
+		.item3 { grid-area: main; }    /*Grid alanında ana bölümü oluşturur.*/          
+		.item4 { grid-area: right; }   /*Grid alanında sağ bölümü oluşturur.*/        
+		.item5 { grid-area: footer1; } /*Grid alanında  alt bölümünü oluşturur*/                         
+		.item6 { grid-area: footer2; }  /*Grid alanında  alt bölümünü oluşturur*/      
+		.item7 { grid-area: footer3; }  /*Grid alanında  alt bölümünü oluşturur*/   
+		.item8 { grid-area: footer4; }   /*Grid alanında  alt bölümünü oluşturur*/   
+
+		.grid-container {
+		  display: grid;
+		  grid-template-areas:      /*Grid alanlarını konumlandırmak için kullanılır. */
+			'header header header header header header'  	 
+			'menu main main main right right'
+			'footer4 footer3 footer2 footer2 footer1 footer1';
+		  grid-gap: 5px; /*Taşıyıcı altındaki elementlerin aralarında boşlukları oluşturur.*/
+		  background-color:#9448db; /* Arka plan rengini ayarlar*/
+		  padding: 3px; /*Genişliği ayarlar.*/
+		}
+
+		.grid-container > div {		 /*"grid-container" sınıfını içeren elemanların; Yazı rengini */
+		  background-color: #ded3e8;  /* Arka plan rengini ayarlar*/
+		  text-align: center; /*Yazıyı ortalamaya yarar.*/
+		  padding: 20px 0; /*Genişliği ayarlar.*/ 
+		  font-size: 20px; /*Yazı boyutunu belirler.*/
+		}
+		
+		.grid-container > div {		 /*Bu alanda "body" içerisinde yer alan "grid-container" sınıfını içeren elemanların; Yazı rengini */
+		  background-color: #ded3e8;  /* Arka plan rengini ayarlar*/
+		  text-align: center; /*Yazıyı ortalamaya yarar.*/
+		  padding: 20px 0; /*Genişliği ayarlar.*/
+		  font-size: 20px; /*Yazı boyutunu belirler.*/
+		}
+		
+		.listebtn {			/* Button rengi, yazı boyutu rengi, buton yazı rengi buradan ayarlıyoruz.*/
+		background-color: pink ; /* Arka plan rengini ayarlar*/
+		color: white; /*Yazı rengi ayarlar.*/
+		padding: 16px; /*Genişliği ayarlar.*/
+		font-size: 16px; /*Yazı boyutunu belirler.*/
+		border: none; /*HTML elementinin kenar / sınır çizgisinin kalınlığını, şeklini, rengini ayarlamaya yarar.*/
+		cursor: pointer; /*İmleç özelliğinin türünü tanımlamak için kullanılır.*/
+		}
+
+		.listeaçılır { /* Açılır listenin buton üzerinde ki açılır hizası buradan belirleniyor.*/
+		display: inline-block;
+		}
+
+		.liste-içerik {  /* Açılır liste bloğunun yapısı burada belirlenmekte. Örneğin açılır listenin blok genişliği ve yükseklşiğinin ayarlanması burada yer almaktadır..*/
+		display: none; /*bir elemanı gizler ve sayfada yer teşkil etmez*/
+		position: absolute; /*Konumlandırılmış bir ata öğesi bulunmadığı durumlarda, doğrudan web sayfasına göre konumlandırılacaktır */
+		background-color: #ded3e8; /* Arka plan rengini ayarlar*/
+		min-width: 220px; /*Minimum genişliği belirler.*/
+		z-index: 1; /*konumu belirlemek için kullanılır*/
+}
+		}
+
+		.liste-içerik a { /* Açılır liste yazıların rengi, boyutlarının ayarlanması.*/
+		color: black; /*Yazı rengi ayarlar.*/
+		padding: 12px 180px; /*Genişliği ayarlar.*/
+		text-decoration: none; /*Metinlerimizin altını ve üstünü çizmek istediğimizi belirler. */
+		display: block;  /* Bir elementin kutu şeklinde alan kaplamasını sağlayan kod parçasıdır.*/
+		}
+
+		.liste-içerik a:hover {background-color: azure} /* Arka plan rengini ayarlar*/
+
+		.listeaçılır:hover .liste-içerik { /* İmlecin üzerine geldiğinde yapılacak işlemlerin sağlandığı bölüme denir..*/ 
+		display: block;
+		}
+
+		.listeaçılır:hover .listebtn {  /* İmlecin üzerine geldiğinde yapılacak işlemlerin sağlandığı bölüme denir..*/
+		background-color: pink; /* Arka plan rengini ayarlar*/
+		}
+				
+		@media screen and (max-width: 500px) { /*Genişliği 500 piksel iken grid yapısının değişmesini sağlıyoruz.*/
+			body {
+				background-color: gray; /* Arka plan rengini ayarlar*/
+			}
+			
+			.grid-container {				/* Genişliği 500 pikselin altında iken grid yapılarının alanlarının sıraya dizilmesini sağlıyor.*/
+				grid-template-areas:
+				  'menu'
+				  'header'	
+                   'right' 	
+				   'main'
+				  'footer1'
+				  'footer2'
+				  'footer3'
+				  'footer4'
+				  
+				   ;
+				}
+			}	
+</style>
+</head>
+<body>
+	<div class="grid-container"> <!--Row, column, cell gibi yapıların oluşumunu sağlayan ana kutudur.-->
+		<div class="item1">YEŞİM DUMAN</div> <!-- Bir bölüm belirtip aynı özellikleri vermek için Kütahya Dumlupınar Üniversitesi adında sınıf oluşturuldu.-->
+		<div class="item2"> 
+		<div class="listeaçılır"> 	
+		<button class="listebtn">İNTERNET VE AĞ TEKNOLOJİLERİ</button>  <!-- İnternet Ve Ağ Teknolojileri adında buton oluşturuldu.-->	
+		<div class="liste-içerik"> <!--Açılır listeyi oluşturuldu.-->
+		<a href="https://tr.wikipedia.org/wiki/Java_(programlama_dili)">JAVA</a> <!--Href özelliği bağlantı yapılacak sayfanın URL adresini belirtir.-->
+		<a href="https://tr.wikipedia.org/wiki/C_Sharp">C#</a> <!--Href özelliği bağlantı yapılacak sayfanın URL adresini belirtir.--> 
+		<a href="https://tr.wikipedia.org/wiki/Python_(programlama_dili)">PYTHON</a> <!--Href özelliği bağlantı yapılacak sayfanın URL adresini belirtir.-->
+		<a href="https://tr.wikipedia.org/wiki/PHP">PHP</a> <!--Href özelliği bağlantı yapılacak sayfanın URL adresini belirtir.--> 
+		<a href="https://tr.wikipedia.org/wiki/JavaScript">JAVASCRİPT</a> <!--Href özelliği bağlantı yapılacak sayfanın URL adresini belirtir.-->
+		<a href="https://tr.wikipedia.org/wiki/Visual_Basic">VİSUAL BASİC</a> <!--Href özelliği bağlantı yapılacak sayfanın URL adresini belirtir.--> 
+		<a href="https://tr.wikipedia.org/wiki/C%2B%2B">C++</a>	<!--Href özelliği bağlantı yapılacak sayfanın URL adresini belirtir.-->					
+		<a href="https://tr.wikipedia.org/wiki/HTML">HTML</a> <!--Href özelliği bağlantı yapılacak sayfanın URL adresini belirtir.-->
+		<a href="https://tr.wikipedia.org/wiki/SQL">SQL</a> <!--Href özelliği bağlantı yapılacak sayfanın URL adresini belirtir.-->
+		</div>
+		</div>
+		</div>
+		<div class="item3">Bilişim teknolojileri departmanı, milyonlarca insana iş imkanı sağlayarak kariyer yolları açıyor. Pek çok kurum, işletmelerinin çeşitli teknolojik ürünlerin, bilgisayarlarını, ağlarını ve diğer teknik alanlarını yönetmek için kendi içlerindeki bilişim teknolojileri departmanlarına başvuruyor <br> 
+		 Bilişim teknolojileri geniş bir yelpazeye sahiptir. Bilgisayarların veri yönetimi için hayati öneme sahip olduğu, özellikle iş dünyasında elektronik bilginin yönetilmesi ve işlenmesinin tüm yönleriyle ilgilidir. Günümüz rekabet ortamında, hemen hemen her şirketin iş stratejisi, başarılı olmak ve geleceği bilişim sistemlerinin etkin kullanımına dayanmaktadır. Bilişim teknolojileri, bir işi tamamlamanın verimliliğini, doğruluğunu, tekrarlanabilirliğini, hızını artıran ve aynı zamanda maliyetlerin ve insan emeğinin harcanan çabasının azaltıldığı çözümler üretmek amacı ile kullanılır.<br> 
+		</div>   <!-- Bir bölüm belirtip aynı özellikleri vermek için oluşturuldu.-->
+		<div class="item4"> <!-- Bir bölüm belirtip aynı özellikleri vermek için oluşturuldu.-->
+		 <img src="https://logowik.com/content/uploads/images/kutahya-dumlupinar-universitesi.jpg" style="width:300px;height:200px;"> <!--Bir resmi belirtmek için (image) etiketini kullanırız-->
+		</div>
+		<div class="item5">Kütahya Dumlupınar Üniversitesi</div> <!-- Bir bölüm belirtip aynı özellikleri vermek için Kütahya Dumlupınar Üniversitesi adında sınıf oluşturuldu.-->
+		<div class="item6">Tavşanlı Meslek Yüksek Okulu</div> <!-- Bir bölüm belirtip aynı özellikleri vermek için Tavşanlı Meslek Yüksek Okulu adında sınıf oluşturduk.-->
+		<div class="item7">İnternet Ve Ağ Teknolojileri</div><!-- Bir bölüm belirtip aynı özellikleri vermek için İnternet Ve Ağ Teknolojileri adında sınıf oluşturduk.-->
+		<div class="item8">201933261008</div> <!-- Bir bölüm belirtip aynı özellikleri vermek için 201933261008 adında sınıf oluşturduk.-->
+	</div>
+</body>
+</html>
