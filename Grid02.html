@@ -1,0 +1,104 @@
+<html>
+<head>
+<style>
+.item1 { grid-area: header; }/*Grid alanında  üst bölümünü oluşturur.*/
+.item2 { grid-area: menu; }/*Grid alanında sidebar bölümünü oluşturur.*/
+.item3 { grid-area: main; }/*Grid alanında ana bölümü oluşturur.*/
+.item4 { grid-area: right; } /*Grid alanında sağ bölümü oluşturur.*/
+.item5 { grid-area: footer; } /*Grid alanında  alt bölümünü oluşturur*/
+
+.grid-container {
+  display: grid;
+  grid-template-areas: /*Grid alanlarını konumlandırmak için kullanılır. */
+    'header header header header header header'
+    'menu main main main right right'
+    'menu footer footer footer footer footer';
+  grid-gap: 8px;/*Taşıyıcı altındaki elementlerin aralarında boşlukları oluşturur.*/
+  background-color: rgba(255, 112, 143);/*Arka Plan Rengi*/
+  padding: 8px; /*Genişliği ayarlar.*/
+}
+
+.grid-container >/*Row, column, cell gibi yapıların oluşumunu sağlayan ana kutudur. */ div {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;/*metin hizalama merkezi*/ 
+  padding: 20px 0; /*Yazıyı ortalamaya yarar.*/
+  font-size: 30px; /*Yazı boyutunu belirler.*/
+}
+</style>
+</head>
+<body>
+
+
+<div class="grid-container"> 
+  <div class="item2">
+<style>
+.dropbtn {
+  background-color: #c4eff2; /*Arka plan rengi ayarlar.*/
+  color: black ; /*Yazı rengi ayarlar.*/
+  padding: 16px; /*Genişliği ayarlar.*/
+  font-size: 16px; /*Yazı boyutunu belirler.*/
+  border: none; /*HTML elementinin kenar / sınır çizgisinin kalınlığını, şeklini, rengini ayarlamaya yarar.*/
+  cursor: pointer; /*İmleç özelliğinin türünü tanımlamak için kullanılır.*/
+}
+
+.dropdown {
+  position: relative; /*nesne gene normal akış içerisinde olmaya devam eder ancak top, right, bottom ve left özelliklerini kullanma fırsatı verir. */
+  display: inline-block; /* elementler çevresindeki elementlere ve satır içi kutu içeriklerine göre farklı davranışlar gösterir.*/
+}
+
+.dropdown-content {
+  display: none; /*bir elemanı gizler ve sayfada yer teşkil etmez*/
+  position: absolute; /*Konumlandırılmış bir ata öğesi bulunmadığı durumlarda, doğrudan web sayfasına göre konumlandırılacaktır */
+  background-color: rgb: rgb(240, 207, 255); /*Arka plan rengi ayarlar.*/
+  min-width: 160px; /*bir elemanın asgari içerik genişliği belirlemenizi sağlar.*/
+
+  z-index: 1; /*konumu belirlemek için kullanılır*/
+}
+
+.dropdown-content a {
+  color: black; /*Yazı rengi ayarlar.*/
+  padding: 12px 16px; /*Genişliği ayarlar.*/
+  display: block; /*bir elemanı gizler ve sayfada yer teşkil etmez*/
+}
+
+.dropdown-content a:hover {background-color: rgb(255, 224, 248)} /*Arka plan rengi ayarlar.*/
+
+.dropdown:hover .dropdown-content {
+  display: block; /*bir elemanı gizler ve sayfada yer teşkil etmez*/
+}
+
+.dropdown:hover .dropbtn {
+  background-color: rgb(255, 107, 139); /*Arka plan rengi ayarlar.*/
+}
+</style>
+</head>
+<body>
+<div class="dropdown">
+  <button class="dropbtn">Programlama Dilleri</button>
+  <div class="dropdown-content">
+  <a href="#">JAVA</a> <!--Href özelliği bağlantı yapılacak sayfanın URL adresini belirtir.-->
+  <a href="#">C#</a><!--Href özelliği bağlantı yapılacak sayfanın URL adresini belirtir.-->
+  <a href="#">PYTHON</a><!--Href özelliği bağlantı yapılacak sayfanın URL adresini belirtir.-->
+   <a href="#">PHP</a><!--Href özelliği bağlantı yapılacak sayfanın URL adresini belirtir.-->
+  <a href>VİSUAL BASİC</a><!--Href özelliği bağlantı yapılacak sayfanın URL adresini belirtir.-->
+  <a href="#">JAVASCRİPT</a><!--Href özelliği bağlantı yapılacak sayfanın URL adresini belirtir.-->
+   <a href="#">RUBY</a><!--Href özelliği bağlantı yapılacak sayfanın URL adresini belirtir.-->
+  <a href="#">SQL</a><!--Href özelliği bağlantı yapılacak sayfanın URL adresini belirtir.-->
+  <a href="#">HTML</a><!--Href özelliği bağlantı yapılacak sayfanın URL adresini belirtir.-->
+  <a href="#">BASH/SHELL</a><!--Href özelliği bağlantı yapılacak sayfanın URL adresini belirtir.-->
+  <a href="#">C++</a><!--Href özelliği bağlantı yapılacak sayfanın URL adresini belirtir.-->
+  <a href="#">TYPESCRİPT</a><!--Href özelliği bağlantı yapılacak sayfanın URL adresini belirtir.-->
+  
+  </div>
+</div>
+    
+
+  </div><!--"Izgara Alanı Başlık Kısmı "-->
+  <div class="item1">MİCROSOFT OFFİCE PROGRAMLARI</div> <!-- Bir bölüm belirtip aynı özellikleri vermek için MİCROSOFT OFFİCE PROGRAMLARI adında sınıf oluşturduk.-->
+  <div class="item3">İŞLETİM SİSTEMİ ÇEŞİTLERİ</div>   <!-- Bir bölüm belirtip aynı özellikleri vermek için İŞLETİM SİSTEMİ ÇEŞİTLERİ adında sınıf oluşturduk.-->
+  <div class="item4">ÇEVRE BİRİMLERİ</div> <!-- Bir bölüm belirtip aynı özellikleri vermek için ÇEVRE BİRİMLERİ adında sınıf oluşturduk.-->
+  <div class="item5">TEMEL BİRİMLERİ</div> <!-- Bir bölüm belirtip aynı özellikleri vermek için TEMEL BİRİMLERİ adında sınıf oluşturduk.-->
+</div>
+
+</body>
+</html>
