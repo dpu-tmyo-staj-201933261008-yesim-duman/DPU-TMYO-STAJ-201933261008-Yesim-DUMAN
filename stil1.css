@@ -1,0 +1,89 @@
+@charset "utf-8"
+
+.item1 { flex-area: kutu1; }
+.item2 { flex-area: kutu2; }
+.item3 { flex-area: kutu3; }
+.item4 { flex-area: kutu4; }
+.item5 { flex-area: kutu5; }
+.item6 { flex-area: kutu6; }
+.item7 { flex-area: kutu7; }
+
+/*büyük kutu css kodları*/
+.flex-container {
+	display: flex;/*Taşıyıcı elemana tanımlanan flex özelliği taşıyıca esneklik kazandırır*/
+		background-color: #2196F3;/*burada oluşturduğumuz büyük kutunun rengini ayarladım. */
+		padding: 6px; /* kenar boşluklarını ayarladım.*/
+		margin: 0 5rem;/*saydam dış boşluğunu ayarladım.*/
+		border-radius: 24px;/*yuvarlatılmış kenarlar oluşturmak için kullanılır.*/
+		
+}
+
+.kare
+{
+width:200;
+height:150px;
+background-color:#2196F3;
+top:150px;
+left:50px;
+position:relative;
+z-index:5; /*z-index: 5; kullanılan öğe z-index: 4; kullanılan öğenin üzerinde
+görünür.*/
+
+
+
+} 
+/*Bölümleri içeren css kodları*/
+.flex-container .item{
+	background-color: #FFFFFF;/* n arka plan rengini ayarladım*/
+    	color: #000000;/*yazı rengini ayarladım.*/
+    	height: 100%;/*Boyutunu ve yüksekliğini ayarladım. */
+    	border-radius: 24px;/**yuvarlatılmış kenarlar oluşturmak için kullanılır. */
+    	padding: 10px;/*kenar boşluklarını ayarladım*/
+		
+		
+	}
+
+.text-align{
+	text-align:left;
+	position: fixed;
+	top:20px;
+	left:0px:
+	z-index:4; /*z-index: 5; kullanılan öğe z-index: 4; kullanılan öğenin üzerinde
+görünür.*/
+	
+
+}
+	
+.flex-col {
+display: flex;/*Taşıyıcı elemana tanımlanan flex özelliği taşıyıca esneklik kazandırır*/
+color: #000000;/*yazı rengini ayarladım.*/
+    flex-direction: column;/*bölümlerin  alt alta sıralanması için column özelliğini ayarladım.*/
+    width: 100%; /*Genişliğini ayarladım.*/
+    padding: 0 5px;/*kenar boşluklarını ayarladım*/
+	
+	
+}
+
+.bolum {
+	margin-bottom: 5px;/*alt kenar boşluğunu bellibir değer kadar veya yüzde olarak belirler */
+	text-align: center;/*burada bölmülerin içindeki yazıları ortaladım*/
+	}
+
+
+	
+a{
+	color:#000000;/*yazı rengini ayarladım. */
+	text-decoration:none;/*linklerin altındaki çizgileri sildim*/
+	}
+a:hover{
+	color: purple;/* Bölümlerin üstüne gelince yazının rengini ayarladım.*/
+	}
+	/*sayfa genişliği 500px den küçükken kutuların hepsi alt alta geliyor */
+@media screen and (max-width: 500px){
+	.flex-container{
+		flex-direction: column;/*bölümlerin  alt alta sıralanması için column özelliğini ayarladım.*/
+	}
+	.summary {
+		margin-bottom: 5px;/*alt kenar boşluğunu bellibir değer kadar veya yüzde olarak belirler*/ 
+		
+	}
